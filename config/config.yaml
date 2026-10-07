@@ -1,0 +1,30 @@
+application:
+  name: "ReqGuard AI"
+  version: "1.0.0"
+  max_requirement_length: 8000
+
+llm:
+  provider: "gemini"
+  model: "gemini-3.5-flash-lite"
+  temperature: 0.2
+  timeout: 30
+  max_retries: 3
+  enrich_analysis: true
+
+generation:
+  max_test_cases: 6
+  include_positive: true
+  include_negative: true
+  include_boundary: true
+  include_edge_cases: true
+  include_security: true
+
+nlp:
+  ambiguity_detection: true
+  completeness_analysis: true
+  similarity_threshold: 0.85
+  embedding_model: "all-MiniLM-L6-v2"
+  spacy_model: "en_core_web_sm"
+
+api:
+  prefix: "/api/v1"
